@@ -1,5 +1,6 @@
 import { profile } from '../data/profile.js'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
+import { isPlaceholder } from '../utils/format.js'
 import Reveal from './Reveal.jsx'
 import SectionHeading from './SectionHeading.jsx'
 import VideoCard from './VideoCard.jsx'
@@ -10,10 +11,27 @@ export default function Highlights() {
   const { main, categories } = profile.videos
   const visibleCategories = categories.filter((category) => category.items?.length > 0)
 
+  const { shirtNumber, highlightsShirtNumber } = profile
+  const showShirtNote =
+    highlightsShirtNumber &&
+    shirtNumber &&
+    !isPlaceholder(highlightsShirtNumber) &&
+    !isPlaceholder(shirtNumber) &&
+    highlightsShirtNumber !== shirtNumber
+  const shirtNote = t.highlights.shirtNote
+    .replace('{highlights}', highlightsShirtNumber)
+    .replace('{current}', shirtNumber)
+
   return (
     <section id="highlights" className="section section--light highlights">
       <div className="container">
         <SectionHeading eyebrow={t.highlights.eyebrow} title={t.highlights.title} intro={t.highlights.intro} />
+
+        {showShirtNote && (
+          <Reveal as="p" className="highlights__shirt-note">
+            {shirtNote}
+          </Reveal>
+        )}
 
         <Reveal as="article" className="highlights__main" aria-label={t.highlights.main}>
           <VideoCard video={main} large />

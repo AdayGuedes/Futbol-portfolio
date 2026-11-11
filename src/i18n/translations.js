@@ -43,6 +43,7 @@ export const translations = {
       born: 'Nacido el',
       nationality: 'Nacionalidad',
       foot: 'Pierna dominante',
+      side: 'Banda',
       primaryPosition: 'Posición principal',
       secondaryPosition: 'Posición secundaria',
       club: 'Club actual',
@@ -53,6 +54,8 @@ export const translations = {
       title: 'Cómo juego',
       intro: 'Vídeo principal y cortes por fase del juego.',
       main: 'Vídeo principal',
+      // {highlights} = profile.highlightsShirtNumber · {current} = profile.shirtNumber
+      shirtNote: 'Dorsal {highlights} en la mayoría de highlights · Dorsal {current} en Union (actual)',
       categories: {
         defense: 'Defensa 1vs1',
         attack: 'Centros y ataque',
@@ -131,6 +134,7 @@ export const translations = {
       born: 'Born',
       nationality: 'Nationality',
       foot: 'Preferred foot',
+      side: 'Side',
       primaryPosition: 'Primary position',
       secondaryPosition: 'Secondary position',
       club: 'Current club',
@@ -141,6 +145,7 @@ export const translations = {
       title: 'How I play',
       intro: 'Main reel plus clips broken down by phase of play.',
       main: 'Main reel',
+      shirtNote: 'No. {highlights} in most highlights · No. {current} at Union (current)',
       categories: {
         defense: '1v1 defending',
         attack: 'Crossing & attacking',

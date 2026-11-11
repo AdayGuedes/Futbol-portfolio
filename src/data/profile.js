@@ -20,7 +20,10 @@ export const profile = {
   firstName: 'Aday',
   lastName: 'Muñoz Guedes',
   initials: 'AM',
-  shirtNumber: 'EDITAR', // p. ej. '2'. Mientras ponga EDITAR no se muestra en la portada.
+  shirtNumber: '5', // Dorsal actual (Union). Se muestra en la portada.
+  // Dorsal que llevo en la mayoría de vídeos de highlights. Si es distinto de shirtNumber,
+  // la sección "Highlights" muestra un aviso con los dos números.
+  highlightsShirtNumber: '2',
   hometown: 'Gran Canaria',
 
   // Foto principal de la portada (public/images/hero.jpg).
@@ -30,8 +33,11 @@ export const profile = {
   // ---------- Posición ----------
   position: {
     primary: { es: 'Lateral / Fullback', en: 'Fullback' },
-    secondary: { es: 'EDITAR: p. ej. Extremo', en: 'EDIT: e.g. Winger' },
+    secondary: { es: 'Extremo · Mediocentro', en: 'Winger · Central Midfielder' },
   },
+
+  // Banda en la que juego de lateral
+  side: { es: 'Derecho e izquierdo', en: 'Right and left (RB / LB)' },
 
   // ---------- Club actual ----------
   club: {
@@ -43,25 +49,23 @@ export const profile = {
 
   // ---------- Datos físicos ----------
   physical: {
-    height: { es: 'EDITAR: 1,XX m', en: 'EDIT: 1.XX m · X\'X"' },
-    weight: { es: 'EDITAR: XX kg', en: 'EDIT: XX kg · XXX lb' },
-    // Formato AAAA-MM-DD, p. ej. '2004-03-15'. La edad se calcula sola.
-    birthDate: 'EDITAR: AAAA-MM-DD',
-    foot: { es: 'EDITAR: Derecha / Izquierda', en: 'EDIT: Right / Left' },
+    height: { es: '1,70 m', en: '1.70 m · 5\'7"' },
+    weight: { es: '60 kg', en: '60 kg · 132 lb' },
+    // Formato AAAA-MM-DD. La edad se calcula sola.
+    birthDate: '2005-05-06',
+    foot: { es: 'Derecha', en: 'Right' },
   },
 
   nationality: { es: 'Española', en: 'Spanish' },
 
-  availability: {
-    es: 'EDITAR: p. ej. Disponible a partir de mayo de 2027',
-    en: 'EDIT: e.g. Available from May 2027',
-  },
+  // Vacío a propósito: mientras esté vacío, la tarjeta "Disponibilidad" no se muestra.
+  availability: { es: '', en: '' },
 
   // ---------- Contacto ----------
   contact: {
-    email: 'EDITAR@tu-email.com',
-    // Solo números, con prefijo de país y sin "+": p. ej. '34600123456'
-    whatsapp: 'EDITAR: 34600000000',
+    email: 'adaymg2.official@gmail.com',
+    // Solo números, con prefijo de país y sin "+"
+    whatsapp: '34699562847',
     // Archivo en public/cv-deportivo.pdf (reemplaza el de ejemplo por el tuyo)
     cvUrl: '/cv-deportivo.pdf',
   },
@@ -164,15 +168,24 @@ export const profile = {
   // De más antiguo a más reciente. `current: true` marca el club actual.
   career: [
     {
-      period: { es: 'EDITAR: 20XX – 2023', en: 'EDIT: 20XX – 2023' },
-      team: { es: 'EDITAR: Club en Gran Canaria', en: 'EDIT: Club in Gran Canaria' },
+      period: '2017 – 2021',
+      team: 'C.D. Arguineguín',
       location: { es: 'Gran Canaria, España', en: 'Gran Canaria, Spain' },
-      note: { es: 'EDITAR: categoría / logros', en: 'EDIT: level / achievements' },
+      note: { es: 'Infantil – Cadete', en: 'Infantil – Cadete (youth)' },
+    },
+    {
+      period: '2021 – 2023',
+      team: 'Maspalomas',
+      location: { es: 'Gran Canaria, España', en: 'Gran Canaria, Spain' },
+      note: {
+        es: 'Juvenil División de Honor · Juvenil Interinsular',
+        en: 'U19 División de Honor · U19 Interinsular',
+      },
     },
     {
       period: '2023 – 2026',
       team: 'York University',
-      location: { es: 'EDITAR: ciudad, país', en: 'EDIT: city, country' },
+      location: { es: 'York, Nebraska (EE. UU.)', en: 'York, Nebraska (USA)' },
       note: { es: 'Fútbol universitario', en: 'College soccer' },
     },
     {
@@ -188,7 +201,7 @@ export const profile = {
   // Se inyecta en index.html al arrancar/compilar (reinicia `npm run dev` si lo cambias).
   seo: {
     // URL pública final de la web. WhatsApp necesita la URL completa para mostrar la imagen.
-    siteUrl: 'EDITAR: https://tu-dominio.com',
+    siteUrl: 'https://futbol-portfolio.munozguedesaday.workers.dev',
     // La versión `es` es la que ve WhatsApp al compartir (idioma por defecto).
     // Al cambiar de idioma en la web, la pestaña del navegador usa la versión `en`.
     title: {

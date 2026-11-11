@@ -21,11 +21,16 @@ export default function QuickStats() {
     { key: 'age', label: t.stats.age, ...age },
     { key: 'foot', label: t.stats.foot, value: L(physical.foot) },
     { key: 'primary', label: t.stats.primaryPosition, value: L(position.primary), accent: true },
+    { key: 'side', label: t.stats.side, value: L(profile.side) },
     { key: 'secondary', label: t.stats.secondaryPosition, value: L(position.secondary) },
     { key: 'nationality', label: t.stats.nationality, value: L(profile.nationality) },
     { key: 'club', label: t.stats.club, value: club.name, sub: `${club.university} · ${club.league}` },
     { key: 'availability', label: t.stats.availability, value: L(profile.availability), wide: true },
-  ]
+  ].filter((item) => String(item.value ?? '').trim() !== '') // un dato vacío no genera tarjeta
+
+  // Si queda un número impar de tarjetas normales, la última ocupa toda la fila (sin huecos).
+  const regular = items.filter((item) => !item.wide)
+  if (regular.length % 2 === 1) regular[regular.length - 1].wide = true
 
   return (
     <section id="profile" className="section section--light">
