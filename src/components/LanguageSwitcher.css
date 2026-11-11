@@ -1,0 +1,48 @@
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+  padding: 0.25rem;
+  border: 1px solid var(--c-line);
+  border-radius: 999px;
+  background: rgba(13, 13, 15, 0.45);
+}
+
+.lang__sep {
+  color: rgba(245, 245, 242, 0.25);
+  font-size: 0.875rem;
+}
+
+.lang__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 36px;
+  padding: 0 0.625rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--c-text-muted);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.lang__btn:hover {
+  color: var(--c-text);
+}
+
+.lang__btn.is-active {
+  color: var(--c-gold);
+  background: rgba(242, 194, 48, 0.12);
+}
+
+.lang__flag {
+  font-size: 1rem;
+  line-height: 1;
+}

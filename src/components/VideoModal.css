@@ -1,0 +1,55 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: var(--gutter);
+  background: rgba(5, 5, 6, 0.92);
+  animation: modal-in 0.25s ease;
+}
+
+.modal__dialog {
+  position: relative;
+  width: min(1100px, 100%);
+}
+
+.modal__dialog .yt {
+  border-radius: var(--radius-sm);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.modal__close {
+  position: absolute;
+  top: -56px;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--c-line);
+  border-radius: 50%;
+  background: var(--c-surface);
+  color: var(--c-text);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.modal__close:hover {
+  background: var(--c-gold);
+  color: var(--c-ink);
+}
+
+.modal__close svg {
+  width: 22px;
+  height: 22px;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+  }
+}
