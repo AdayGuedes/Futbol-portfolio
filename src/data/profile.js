@@ -26,9 +26,11 @@ export const profile = {
   highlightsShirtNumber: '2',
   hometown: 'Gran Canaria',
 
-  // Foto principal de la portada (public/images/hero.jpg).
-  // Si el archivo no existe, se ve un fondo negro volcánico con degradado.
+  // Foto principal de la portada (public/images/hero.jpg), vertical y entera.
+  // Si el archivo no existe, la portada queda solo con el texto sobre negro volcánico.
   heroImage: '/images/hero.jpg',
+  // Tamaño real de la foto en píxeles (evita saltos de diseño al cargar).
+  heroImageSize: { width: 1067, height: 1600 },
 
   // ---------- Posición ----------
   position: {

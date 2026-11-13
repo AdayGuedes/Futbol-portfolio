@@ -32,6 +32,7 @@ export const translations = {
       play: 'Reproducir vídeo de highlights',
       scroll: 'Desliza',
       number: 'Dorsal',
+      photoAlt: '{name}, de cuerpo entero, con la camiseta del equipo y la bandera de España',
     },
     stats: {
       eyebrow: 'Ficha rápida',
@@ -123,6 +124,7 @@ export const translations = {
       play: 'Play highlights video',
       scroll: 'Scroll',
       number: 'Number',
+      photoAlt: '{name}, full-length, in team kit with the Spanish flag',
     },
     stats: {
       eyebrow: 'Player profile',
